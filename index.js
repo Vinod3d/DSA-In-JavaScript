@@ -1,9 +1,15 @@
-const x = [1, 4, 6, 0, -9, -2, -5, -1];
 
-// Sort in ascending order
-const ascendingOrder = x.slice().sort((a, b) => a - b);
-console.log("Ascending order:", ascendingOrder);
+function findSmallest(arr){
+    let smallestNum = arr[0]
 
-// Sort in descending order
-const descendingOrder = x.slice().sort((a, b) => b - a);
-console.log("Descending order:", descendingOrder);
+    for(i = 1; i<= arr.length; i++){
+        if(arr[i] < smallestNum){
+            smallestNum = arr[i];
+        }
+    }
+
+    return smallestNum;
+}
+
+const numbers = [5, 3, 8, 1, 9, 2];
+console.log("Smallest number:", findSmallest(numbers));

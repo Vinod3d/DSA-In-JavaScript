@@ -39,12 +39,13 @@ console.log(sumOfArray([1, 2, 3, 4, 5]))
 
 
 let fib = function(n) {
+
     if(n < 2){
         return n;
     }
 
     let prev = 0, curr = 1, next;
-    for(let i=2; i<= n; i++){
+    for(let i=0; i<= n; i++){
         next = prev + curr;
         prev = curr;
         curr = next;
