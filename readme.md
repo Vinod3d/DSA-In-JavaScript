@@ -71,3 +71,54 @@
     const numbers = [5, 3, 8, 1, 9, 2];
     console.log("Smallest number:", findSmallest(numbers));
 ```
+
+### Q 4. Write a JavaScript algorithm to insert a new element at a specified position in an array?
+
+```js
+    let data = [60, 30, 10, 67, 40];
+    let newEl = 70;
+    let position = 2;
+
+    for(let i=data.length-1 ; i>=0; i--){
+        // console.log(data[i])
+        if(i>=position){
+            data[i+1] = data[i];
+            if(i==position){
+                data[i]=newEl;
+            }
+
+        }
+    }
+    console.log(data)
+```
+
+### Q 5. Implement a JavaScript algorithm to delete an element from an array at a specified position. 
+
+```js
+    let data = [60, 30, 10, 67, 40]; 
+    let position = 2;
+
+    for(let i = position; i<data.length-1; i++){
+        // console.log(data[i])
+        data[i] = data[i+1];
+    }
+    data.length = data.length - 1;
+    console.log(data)
+```
+
+### Q 6. Write a JavaScript algorithm to merge two arrays data and data2 into a new array data3.
+
+```js
+    let data = [60, 30, 10, 67, 40, 32, ]; 
+    let data2 = [1, 2, 3, 4, 5, 6, 7, 8, 9 ]; 
+    let data3 = [];
+
+    for(i = 0; i<data.length; i++){
+        data3[i] = data[i]
+    }
+
+    for(i = 0; i<data2.length; i++ ){
+        data3[data.length + i ]= data2[i];
+    }
+    console.log(data3)
+```

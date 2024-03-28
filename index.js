@@ -1,15 +1,26 @@
+let data1 = [60, 30, 10, 67, 40, 32, ]; 
+let data2 = [1, 2, 3, 4, 5, 6, 7 ]; 
+let data3 = [];
 
-function findSmallest(arr){
-    let smallestNum = arr[0]
+let d1 = 0;
+let d2 = 0;
+let d3 = 0;
 
-    for(i = 1; i<= arr.length; i++){
-        if(arr[i] < smallestNum){
-            smallestNum = arr[i];
-        }
+while(d1 < data1.length && d2<data2.length){
+    if(data1[d1]<data2[d2]){
+        data3[d3]=data1[d1];
+        d1++;
+    } else{
+        data3[d3]=data2[d2],
+        d2++
     }
-
-    return smallestNum;
+    d3++
 }
 
-const numbers = [5, 3, 8, 1, 9, 2];
-console.log("Smallest number:", findSmallest(numbers));
+while(d1<data1.length){
+    data3[d3]=data1[d1];
+    d1++;
+    d3++;
+}
+
+console.log(data3)
