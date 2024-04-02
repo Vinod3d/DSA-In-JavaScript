@@ -1,26 +1,16 @@
-let data1 = [60, 30, 10, 67, 40, 32, ]; 
-let data2 = [1, 2, 3, 4, 5, 6, 7 ]; 
-let data3 = [];
+let data = [60, 30, 10, 67 ]; 
+let max = 6;
 
-let d1 = 0;
-let d2 = 0;
-let d3 = 0;
+function pop(){
+    let currentSize = data.length;
 
-while(d1 < data1.length && d2<data2.length){
-    if(data1[d1]<data2[d2]){
-        data3[d3]=data1[d1];
-        d1++;
+    if(currentSize>0){
+        data.length = currentSize-1
     } else{
-        data3[d3]=data2[d2],
-        d2++
+        alert('stack is already empty')
     }
-    d3++
+    console.log(data)
 }
 
-while(d1<data1.length){
-    data3[d3]=data1[d1];
-    d1++;
-    d3++;
-}
+pop();
 
-console.log(data3)

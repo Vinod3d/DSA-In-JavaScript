@@ -75,3 +75,49 @@ const numberOfTerms = 10;
 
 // Call the function and log the result
 console.log(generateFibonacci(numberOfTerms));
+
+
+// INDIRECT RECURSION
+
+
+
+let money = 100;
+let totalApple = 0;
+
+function buyApple(x){
+    if(x>0){
+        console.log('i have', x ,"RS." ,totalApple , 'apple')
+        buyMore(x);
+    } else{
+        console.log('i dont have more money', totalApple, "apple");
+    }
+}
+
+function buyMore(x){
+    totalApple++;
+    buyApple(x-5)
+}
+
+buyApple(money);
+
+
+
+// CALLLSTACK
+
+function color(){
+    let data = 20;
+    console.log(data);
+}
+
+function day(){
+    color();
+}
+
+function fruite(){
+    day();
+}
+function topFunction(){
+    fruite();
+}
+
+topFunction()

@@ -36,3 +36,15 @@ As we go along in this tutorial, new theoretical concepts and terminology (new w
 | Recursion         | A programming technique where a function calls itself.                          |
 | Divide and Conquer | A method of solving complex problems by breaking them into smaller, more manageable sub-problems, solving the sub-problems, and combining the solutions. Recursion is often used when using this method in an algorithm. |
 | Brute Force       | A simple and straightforward way an algorithm can work by simply trying all possible solutions and then choosing the best one.  |
+
+
+### Time Complexity
+
+The Time complexity is mainly calculated by counting the numeber of steps to finish the execution
+
+
+### Space Complexity
+
+Space complexity is the amount of space required to solve a problem
+
+### Big O notation : Use to denote complexity(both)

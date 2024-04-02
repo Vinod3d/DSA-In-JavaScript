@@ -14,6 +14,22 @@
     console.log("Descending order:", descendingOrder);
 ```
 
+```js
+    let data = [40, 30, 12, 25]; 
+
+    for(i = 0; i<data.length; i++){
+        for(j=0; j<data.length; j++){
+            if(data[j]>data[j+1]){
+                let temp = data[j];
+                data[j] = data[j+1];
+                data[j+1] = temp;
+            }
+        }
+    }
+
+    console.log(data)
+```
+
 
 ### Q 2. Generate fibonachi sequence.
 
@@ -121,4 +137,125 @@
         data3[data.length + i ]= data2[i];
     }
     console.log(data3)
+```
+
+```js
+    let data1 = [60, 30, 10, 67, 40, 32, ]; 
+    let data2 = [1, 2, 3, 4, 5, 6, 7 ]; 
+    let data3 = [];
+
+    let d1 = 0;
+    let d2 = 0;
+    let d3 = 0;
+
+    while(d1 < data1.length && d2<data2.length){
+        if(data1[d1]<data2[d2]){
+            data3[d3]=data1[d1];
+            d1++;
+        } else{
+            data3[d3]=data2[d2],
+            d2++
+        }
+        d3++
+    }
+
+    while(d1<data1.length){
+        data3[d3]=data1[d1];
+        d1++;
+        d3++;
+    }
+
+    console.log(data3)
+```
+
+### Q 7. Find second largest element from an array.
+
+```js
+    let data = [1, 5, 7, 6, 3];
+    let largest = data[0];
+    let secondLargest = data[0];
+
+    for (let i = 1; i < data.length; i++) {
+        if (data[i] > largest) {
+            secondLargest = largest;
+            largest = data[i];
+        } else if (data[i] > secondLargest && data[i] !== largest) {
+            secondLargest = data[i];
+        }
+    }
+
+    console.log(secondLargest);
+```
+
+### Q 8. Reverse Array in Javascript.
+
+```js
+    let data = [60, 30, 10, 67, 40, 32, ]; 
+
+    function reverse(data, start, end){
+        while (start < end) {
+            var temp = data[start];
+            data[start] = data[end];
+            data[end] = temp;
+            start++;
+            end--;
+            console.log(data)
+        }
+    }
+
+    reverse(data, 0, data.length - 1);
+```
+
+```js
+    let data = [60, 30, 10, 67, 40, 32, ]; 
+
+    function reverse(data, start, end){
+        console.log(data)
+    if(start<end){
+            var temp = data[start]
+            data[start] = data[end];
+            data[end] = temp
+
+            reverse(data, start+1, end-1)
+        }
+    }
+
+    reverse(data, 0, data.length - 1);
+```
+
+### Q 9. Add Element in Array in Last.
+
+```js
+    let data = [60, 30, 10, 67 ]; 
+    let max = 6;
+
+
+    function push(x){
+        let currentSize = data.length;
+        data[currentSize] =  x;
+        console.log(data)
+    }
+
+    push(45);
+    push(78);
+```
+
+### Q. 10. Remove Element from Array in Last.
+
+```js
+    let data = [60, 30, 10, 67 ]; 
+    let max = 6;
+
+    function pop(){
+        let currentSize = data.length;
+
+        if(currentSize>0){
+            data.length = currentSize-1
+        } else{
+            alert('stack is already empty')
+        }
+        console.log(data)
+    }
+
+    pop();
 ```
