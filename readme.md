@@ -227,7 +227,6 @@
 
 ```js
     let data = [60, 30, 10, 67 ]; 
-    let max = 6;
 
 
     function push(x){
@@ -240,11 +239,47 @@
     push(78);
 ```
 
+```js
+    class Stack{
+        item = [];
+        currentSize;
+        maxSize;
+        constructor(size){
+            this.maxSize = size;
+            this.currentSize= this.item.length;
+        }
+        push(newVal){
+            if(this.currentSize>this.maxSize){
+                console.log("stack in full");
+            } else{
+                this.item[this.currentSize] = newVal;
+                this.currentSize++;
+            }
+        }
+        pop(){
+            if(this.currentSize>0){
+                this.currentSize--;
+                this.item.length = this.currentSize;
+            }else(
+                console.log("stack is already empty")
+            )
+        }
+        display(){
+            console.log(this.item)
+        }
+    }
+
+    st1 = new Stack(5)
+    st1.push(20)
+    st1.push(20)
+    st1.pop()
+    st1.display()
+```
+
 ### Q. 10. Remove Element from Array in Last.
 
 ```js
     let data = [60, 30, 10, 67 ]; 
-    let max = 6;
 
     function pop(){
         let currentSize = data.length;
@@ -258,4 +293,160 @@
     }
 
     pop();
+```
+
+### Q. 11. Reverse String.
+
+```js
+    
+    let data = [];
+    let currentSize = data.length;
+
+    function push(newVal){
+        data[currentSize] =  newVal;
+        currentSize++;
+    }
+
+    function pop(){
+        lastRemovedItem = data[currentSize -1];
+        data.length = currentSize -1 ;
+        currentSize--;
+        return lastRemovedItem;
+    }
+
+    function reverse(item){
+        for(i = 0; i<item.length; i++){
+            push(item[i])
+        }
+        for(i = 0; i<item.length; i++){
+            item[i] = pop();
+        }
+    }
+
+
+    let str = 'vinod';
+    let strArr = str.split("")
+    reverse(strArr)
+    console.log(strArr.join( ""))
+    console.log("data", data);
+```
+
+```js
+    let str = 'vinod';
+    function reverseStr(str){
+        let strArr =  str.split("");
+        for(let i=0; i<strArr.length / 2; i++){
+            let temp = strArr[i];
+            strArr[i] = strArr[strArr.length - i - 1];
+            strArr[strArr.length - i -1] = temp;
+        }
+        return strArr.join("")
+    }
+
+    reverseStr(str)
+    console.log(reverseStr(str))
+```
+
+```js
+    class Stack {
+    temp = [];
+    currentSize = 0;
+
+    constructor() {
+        this.currentSize = this.temp.length;
+    }
+
+    push(element) {
+        this.temp[this.currentSize] = element;
+        this.currentSize++;
+    }
+
+    pop() {
+        if (this.currentSize > 0) {
+        let lastRemovedItem = this.temp[this.currentSize - 1];
+        this.temp.length = this.currentSize - 1;
+        this.currentSize--;
+        return lastRemovedItem;
+        } else {
+        console.log("stack is already empty");
+        }
+    }
+
+    reverseSrt(arr) {
+        let reversedStr = "";
+        for (let i = 0; i < arr.length; i++) {
+        this.push(arr[i]);
+        }
+
+        while (this.currentSize > 0) {
+        reversedStr += this.pop();
+        }
+
+        return reversedStr;
+    }
+    }
+
+    let str = "vinod";
+    let strArr = str.split("");
+    st1 = new Stack();
+    st1.reverseSrt(strArr);
+    console.log(st1.reverseSrt(strArr));
+
+```
+
+
+### Q. 12. Add and Remove Item from in Array from Start.
+
+```js
+    let queue = [];
+    let currentSize = queue.length;
+    let maxSize = 5;
+
+    function enqueue(newval){
+        if(currentSize>=maxSize){
+            console.log("Queue is full");
+        }else{
+            const newArr = Array(queue.length + 1);
+            newArr[0] = newval;
+
+            // console.log(newArr)
+            for (let i = 0; i < queue.length; i++) {
+                newArr[i + 1] = queue[i];
+            }
+            
+            queue.length = 0; // Clear the original array
+
+            for (let i = 0; i < newArr.length; i++) {
+                queue.push(newArr[i]);
+            }
+
+            console.log(queue);
+        }
+    }
+
+    function display(){
+        console.log(queue);
+    }
+
+    function dequeue(){
+        if(currentSize>0){
+
+            for(let i=0; i<queue.length; i++){
+                queue[i]=queue[i+1];
+            }
+            currentSize--;
+            queue.length = currentSize;
+        } else {
+            console.log('queue is already empty')
+        }
+    }
+
+
+    enqueue(11);
+    enqueue(12);
+    enqueue(13);
+    dequeue()
+
+    display()
+
 ```

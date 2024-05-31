@@ -113,6 +113,7 @@ var twoSum = function(nums, target) {
   for (let i = 0; i < nums.length; i++) {
       let complement = target - nums[i]
       if (x[complement] != null) {
+        console.log(x[complement], i)
           return [x[complement], i]
       }
       else {
@@ -125,21 +126,7 @@ console.log(twoSum([2, 7, 11, 15], 9))
 
 // ####################################### Q. 8 Second Largest Digit in a String ##########################################
 
-var secondHighest = function(s){
-  var charecters = s.split('')
-  var numArray = charecters.filter((char)=> !isNaN(char)).sort((a, b) => b - a)
-  // console.log(numArray.sort((a, b) => b - a))
-  var uniq = new Set(numArray)
-  var result = Array.from(uniq);
-  console.log(result)
-  if(result.length >= 2){
-    return result[1]
-  }
-  else{
-    return -1
-  }
-}
 
-console.log(secondHighest("dfa123281afd"))
+
 
 
