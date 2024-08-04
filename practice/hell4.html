@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hell4</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center h-screen">
+
+    <h4></h4>
+
+    <form action="" class="bg-white p-6 rounded-lg shadow-lg w-full max-w-sm">
+        <div class="mb-4">
+            <label for="inp1" class="block text-gray-700 text-sm font-bold mb-2">First Input:</label>
+            <input id="inp1" type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-6">
+            <label for="inp2" class="block text-gray-700 text-sm font-bold mb-2">Second Input:</label>
+            <input id="inp2" type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="flex items-center justify-between">
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                Submit
+            </button>
+        </div>
+    </form>
+
+    <script>
+        var form = document.querySelector("form");
+        var inps = document.querySelectorAll('input[type="text"]');
+        var h4 = document.querySelector("h4")
+
+        form.addEventListener("submit", (e)=>{
+            e.preventDefault();
+            inps.forEach((inp)=>{
+                if(inp.value === ''){
+                    h4.textContent = 'Error, some fields are blank';
+                    h4.style.color = "red";
+                }
+
+                else{
+                    h4.textContent = '';
+                    h4.style.color = "black"
+                }
+            })
+        })
+    </script>
+</body>
+</html>

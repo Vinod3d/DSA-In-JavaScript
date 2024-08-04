@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hell5</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+
+    <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+        <ul class="list-disc pl-5 mb-4">
+            <li class="mb-2 text-gray-700">apple</li>
+        </ul>
+
+        <div class="flex mb-4">
+            <input type="text" placeholder="Add new item" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            <button id="add" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 ml-2 rounded focus:outline-none focus:shadow-outline">Add</button>
+        </div>
+
+        <div class="flex justify-end">
+            <button id="remove" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Remove</button>
+        </div>
+    </div>
+
+    <script>
+        var add = document.querySelector("#add");
+        var remove = document.querySelector("#remove");
+        var inp = document.querySelector("input");
+        var ul = document.querySelector('ul');   
+        var li;
+
+        add.addEventListener("click", function(){
+            if(inp.value.trim() === ""){}
+            else{
+                li = document.createElement('li');
+                li.textContent = inp.value;
+                ul.appendChild(li);
+                inp.value = ""
+            }
+        });
+
+        remove.addEventListener("click", function(){
+            ul.removeChild(li)
+        })
+    </script>
+
+</body>
+</html>
